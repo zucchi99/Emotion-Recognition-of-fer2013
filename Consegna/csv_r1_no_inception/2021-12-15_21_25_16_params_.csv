@@ -1,0 +1,2 @@
+;n_epochs;learning_rate;weight_decay;dropout_prob;conv__in_channels;conv__out_channels;conv__layer_repetitions;lin__out_dimension;loss_fn;optimizer;split_seed;scheduler
+0;35;5e-05;1e-09;0.35;3;(288, 566, 1122, 2244);(4, 3, 2, 1);(1024, 356, 158, 64, 7);CrossEntropyLoss();Adam;78;false
