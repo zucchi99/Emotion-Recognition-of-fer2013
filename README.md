@@ -90,4 +90,6 @@ Structure of the CNNs:
  </tr>
 </table>
 
+So, the full view of the structure is the following:
+
 ![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png?raw=true "SequenceOfC-Block")
