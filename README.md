@@ -2,7 +2,7 @@
 
 ## Dataset Augmentation
 
-Input file: <code>fer2013.csv</code>
+Input file: <code>fer2013.csv</code><br/>
 Output file: <code>fer2013_augmented.csv</code>
 
 From analysis of the dataset emerges that it is:
