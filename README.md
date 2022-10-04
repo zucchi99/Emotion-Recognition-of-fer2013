@@ -10,17 +10,17 @@ The size of original dataset is almost 290 MB.
 Each transformation increase the size of 290 MB more or less.
 The transformation applied are the following:
  1. <code>SOBEL</code>
- * <code>VERTICAL</code>
- * <code>HORIZONTAL</code>
- * <code>CONTRAST_LOW</code>
- * <code>CONTRAST_HIGH</code>
- * <code>CONTRAST_VERY_HIGH</code>
- * <code>FLIP_HORIZONTAL</code>
- * <code>ROT_LEFT_60_DEGREES</code>
- * <code>ROT_LEFT_40_DEGREES</code>
- * <code>ROT_LEFT_20_DEGREES</code>
- * <code>ROT_RIGHT_20_DEGREES</code>
- * <code>ROT_RIGHT_40_DEGREES</code>
- * <code>ROT_RIGHT_60_DEGREES</code>
+ 2. <code>VERTICAL</code>
+ 3. <code>HORIZONTAL</code>
+ 4. <code>CONTRAST_LOW</code>
+ 5. <code>CONTRAST_HIGH</code>
+ 6. <code>CONTRAST_VERY_HIGH</code>
+ 7. <code>FLIP_HORIZONTAL</code>
+ 8. <code>ROT_LEFT_60_DEGREES</code>
+ 9. <code>ROT_LEFT_40_DEGREES</code>
+ 10. <code>ROT_LEFT_20_DEGREES</code>
+ 11. <code>ROT_RIGHT_20_DEGREES</code>
+ 12. <code>ROT_RIGHT_40_DEGREES</code>
+ 13. <code>ROT_RIGHT_60_DEGREES</code>
 
 
