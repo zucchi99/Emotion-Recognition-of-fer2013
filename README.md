@@ -72,6 +72,8 @@ Structure of the CNNs:
             <li> List( <i>Linear</i> )
             <li> <i>SoftMax</i>
         </ol>
+        where a <i>C-Block</i> is formed by:
+        <img src=https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" alt="Conv-Block">
     </td>
     <td>
         <ol>
