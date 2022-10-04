@@ -30,7 +30,7 @@ The transformation applied are the following, defined in the class <code>Filters
  12. <code>ROT_RIGHT_40_DEGREES</code>
  13. <code>ROT_RIGHT_60_DEGREES</code>
 
-The final size is 14 * 290 MB = 4 GB (original images included).
+The final size will be almost 14 * 290 MB = 4 GB (original images included).
 Editing the notebook and selecting only the desidered, it is possible to create a dataset with only some of these filters.
 
 The filters now are implemented in three possible ways:
@@ -53,3 +53,18 @@ If you want to add any type of transformation you just need to:
 
 ## Emotion Recognition
 
+The image recognition is done by a Convolutional Neural Network.
+The creation of the CNN is done by the classes <code>DynamicNetBasic</code> and <code>DynamicNetInceptions</code>.
+Both the classes allow to create dynamic nets (with a variable number of layers).
+The class constructor contains some parameters that allow to try many different nets simply changing a parameter.
+
+<table border="0">
+ <tr>
+    <td><b style="font-size:30px">Title</b></td>
+    <td><b style="font-size:30px">Title 2</b></td>
+ </tr>
+ <tr>
+    <td>Lorem ipsum ...</td>
+    <td>Lorem ipsum ...</td>
+ </tr>
+</table>
