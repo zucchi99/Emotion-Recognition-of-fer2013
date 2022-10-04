@@ -93,3 +93,8 @@ Structure of the CNNs:
 So, for both the classes, the full view of the structure is the following:
 
 ![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png?raw=true "SequenceOfC-Block")
+
+As a reminder, an *Inception-Block* is the following:
+
+![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png?raw=true "Inception-Block")
+
