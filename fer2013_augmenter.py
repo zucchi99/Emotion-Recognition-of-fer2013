@@ -203,6 +203,16 @@ class Fer2013_Augmenter :
     horizontal_image_square = np.multiply(horizontal_image, horizontal_image)
     # return the square root of their sum
     return np.sqrt(vertical_image_square + horizontal_image_square)  
+  
+  
+  # returns: image as np.array with filter applied
+  def apply_flip_horizontal(self, image) :
+    return np.flip(image, 1)
+  
+  
+  # returns: image as np.array with filter applied
+  def apply_rotation(self, image, degrees) :
+    return imutils.rotate(image, degrees)
 
 
   # param image:  the original image
@@ -240,7 +250,7 @@ class Fer2013_Augmenter :
     #---------------------------------------------------------------------------------    
     # horizontal flip
     if Filters.FLIP_HORIZONTAL in self.filters_to_use :
-      filtered_images[Filters.FLIP_HORIZONTAL] = np.flip(image, 1)
+      filtered_images[Filters.FLIP_HORIZONTAL] = self.apply_flip_horizontal(image)
     #---------------------------------------------------------------------------------    
     # rotations
     rot_min = -60
@@ -252,7 +262,7 @@ class Fer2013_Augmenter :
       filter_name = 'ROT_' + direction + '_' + str(abs(degrees)) + '_DEGREES'
       if (degrees != 0) and (filter_name in filters_to_use_names) :
         filter_enum = Filters[filter_name]
-        filtered_images[filter_enum] = imutils.rotate(image, degrees)
+        filtered_images[filter_enum] = self.apply_rotation(image, degrees)
     # return all filters
     return filtered_images
   
@@ -267,7 +277,7 @@ class Fer2013_Augmenter :
   def build_new_dataset(self) :
     new_dataset = []
     print("converting pixels from string to nparray...")
-    np_images = self.string_to_array(df['pixels'])
+    np_images = self.string_to_array(self.data['pixels'])
     print("generating filters for all images...")
     i = 0
     for original_image in tqdm(np_images):
@@ -276,7 +286,7 @@ class Fer2013_Augmenter :
       if Filters.ORIGINAL in self.filters_to_use :
         # add original image to image list
         self.filters_used_ordered = [ Filters.ORIGINAL ]
-        all_image_filters.append(df.at[i, 'pixels'])
+        all_image_filters.append(self.data.at[i, 'pixels'])
       # generate all filters of image
       filtered_images = self.generate_all_filters(original_image)
       # add one by one all the filters to image list
@@ -304,14 +314,14 @@ class Fer2013_Augmenter :
   # param cols:      number of pictures to print in a row
   # param figsize:   size of the pictures
   # prints image example with filters used (needed a notebook to see the output)
-  def print_example(self, df_output, rand_seed=None, cols=4, figsize=(10,10)) :
+  def print_example(self, df_output, img_idx=None, cols=4, figsize=(10,10)) :
     import matplotlib.pyplot as plot
     from random import seed
     from random import random
     # set random seed
-    seed(rand_seed)
+    seed(None)
     # obtain random index
-    img_idx = int(random() * len(self.data))
+    img_idx = int(random() * len(self.data)) if img_idx == None else img_idx
     # print index and emotion
     # print image with all filters
     print('img_idx:', img_idx)
@@ -328,38 +338,17 @@ class Fer2013_Augmenter :
         if column in filter_columns :
             image = self.string_to_array_image(row[column][img_idx])
             idxs = max(i,j) if (rows == 1 or cols == 1) else (i,j)
-            subpl=axs[idxs]
+            subpl = axs[idxs]
             subpl.imshow(image, cmap='gray')
             subpl.set_title(column)
             plot.tight_layout()
             plot.subplots_adjust(hspace=None)
             cur_im += 1
-            j = (j + 1) % cols
-            if j == 0 :
-              i += 1
+            i = cur_im // cols
+            j = cur_im %  cols
     # remove empty boxes
     for r in range(rows) :
         for c in range(cols) :
             if (c + r * cols) >= num_images :
                 fig.delaxes(axs[r][c])
           
-    
-    
-    
-# ------------------------------------------------------------------------------------------------
-# main    
-
-dataset = 'fer2013.csv'
-df = pd.read_csv(dataset)[:3]
-
-y = df['emotion']
-
-#filters = [ e for e in Filters ]
-filters = [ Filters.ORIGINAL, Filters.SOBEL, Filters.VERTICAL, Filters.CONTRAST_HIGH, Filters.CONTRAST_LOW, Filters.CONTRAST_VERY_HIGH, Filters.ROT_LEFT_40_DEGREES, Filters.ROT_LEFT_20_DEGREES ]
-filter_names = [ f.name for f in filters ]
-
-my_class = Fer2013_Augmenter(df, filters)
-
-out_df = my_class.create_new_df()
-
-my_class.print_example(out_df)
