@@ -66,9 +66,11 @@ Structure of the CNNs:
  </tr>
  <tr>
     <td>
-        1. A list of ( n lists of *CDrop-Blocks*, *MaxPool2D* )
-        2. A *DropOut*
-        3. A list of *Linear*
+        <ol>
+            <li> A list of ( n lists of <i>CDrop-Blocks</i>, <i>MaxPool2D</i> )
+            <li> A <i>DropOut</i>
+            <li> A list of <i>Linear</i>
+        </ol>
     </td>
     <td>Lorem ipsum ...</td>
  </tr>
