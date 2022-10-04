@@ -67,20 +67,20 @@ Structure of the CNNs:
  <tr>
     <td>
         <ol>
-            <li> A list of ( n lists of <i>CDrop-Blocks</i>, <i>MaxPool2D</i> )
-            <li> A <i>DropOut</i>
-            <li> A list of <i>Linear</i>
-            <li> A <i>SoftMax</i>
+            <li> List( List(<i>CDrop-Blocks</i>), <i>MaxPool2D</i> )
+            <li> <i>DropOut</i>
+            <li> List( <i>Linear</i> )
+            <li> <i>SoftMax</i>
         </ol>
     </td>
     <td>
         <ol>
-            <li> A list of ( n lists of <i>C-Blocks</i>, <i>MaxPool2D</i> )
-            <li> A <i>DropOut</i>
-            <li> A list of <i>Inception-Block</i>
-            <li> A <i>DropOut</i>
-            <li> A list of <i>Linear</i>
-            <li> A <i>SoftMax</i>
+            <li> List( List(<i>C-Blocks</i>), <i>MaxPool2D</i> )
+            <li> <i>DropOut</i>
+            <li> List( <i>Inception-Block</i> )
+            <li> <i>DropOut</i>
+            <li> List( <i>Linear</i> )
+            <li> <i>SoftMax</i>
         </ol>
     </td>
  </tr>
