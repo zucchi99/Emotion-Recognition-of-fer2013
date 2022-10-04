@@ -23,4 +23,12 @@ The transformation applied are the following:
  12. <code>ROT_RIGHT_40_DEGREES</code>
  13. <code>ROT_RIGHT_60_DEGREES</code>
 
+So the final size is 14 * 290 MB = 4 GB (original images included).
+It is possible to create a dataset with only some of these filters selecting only the desidered.
+The transformation class is inside the <code>fer2013_augmenter.py</code> and is invoked in the notebook.
+
+The filters now are implemented in three possible ways:
+ * using a lambda function: (x, y, pixel) -> pixel
+  - used for altering the contrast
+ * using a filter matrix 
 
