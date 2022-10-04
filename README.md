@@ -6,8 +6,8 @@ Input file: <code>fer2013.csv</code><br/>
 Output file: <code>fer2013_augmented.csv</code>
 
 From analysis of the dataset emerges that it is:
- * small: has only 35887 images
- * not uniformly distributed: happiness has 8989 samples meanwhile disgust only 547.
+ * **small**: has only 35887 images
+ * **not uniformly distributed**: happiness has 8989 samples meanwhile disgust only 547.
 
 The analysis and the augmentation is done in the <code>fer2013_augmenter.ipynb</code> file.<br/>
 The transformation class is implemented inside the <code>fer2013_augmenter.py</code> and is invoked by the notebook.
@@ -34,11 +34,11 @@ The final size is 14 * 290 MB = 4 GB (original images included).
 Editing the notebook and selecting only the desidered, it is possible to create a dataset with only some of these filters.
 
 The filters now are implemented in three possible ways:
- * using a lambda function: (x, y, pixel) -> pixel
+ * using a **lambda function**: (x, y, pixel) -> pixel
     * used for altering the contrast
- * using a filter matrix in a function: (image, filter) -> image
+ * using a **filter matrix** in a function: (image, filter) -> image
     * used for vertical and horizontal filters
- * using custom function: (image, custom_parameter) -> image
+ * using **custom function**: (image, custom_parameter) -> image
     * used for sobel filter, flipping, rotations
 
 Before applying the transformation filter-based, the image is padded to avoid images with lower dimensions.<br/>
