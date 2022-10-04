@@ -1,4 +1,4 @@
-### Emotion Recognition of fer2013
+# Emotion Recognition of fer2013
 
 ## Dataset Augmentation
 
