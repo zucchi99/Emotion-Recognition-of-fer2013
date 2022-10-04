@@ -56,15 +56,20 @@ If you want to add any type of transformation you just need to:
 The image recognition is done by a Convolutional Neural Network.
 The creation of the CNN is done by the classes <code>DynamicNetBasic</code> and <code>DynamicNetInceptions</code>.
 Both the classes allow to create dynamic nets (with a variable number of layers).
-The class constructor contains some parameters that allow to try many different nets simply changing a parameter.
+The class constructor allows to try many different nets by simply changing few parameters.
 
+Structure of the CNNs:
 <table border="0">
  <tr>
-    <td><b style="font-size:30px">Title</b></td>
-    <td><b style="font-size:30px">Title 2</b></td>
+    <td><b style="font-size:30px">DynamicNetBasic</b></td>
+    <td><b style="font-size:30px">DynamicNetInceptions</b></td>
  </tr>
  <tr>
-    <td>Lorem ipsum ...</td>
+    <td>
+        1. a list of ( n lists of CDrop-Blocks, MaxPool2D )
+        2. DropOut
+        3. A list of \_Linear\_
+    </td>
     <td>Lorem ipsum ...</td>
  </tr>
 </table>
