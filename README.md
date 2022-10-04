@@ -67,7 +67,7 @@ Structure of the CNNs:
  <tr>
     <td>
         <ol>
-            <li> List( List(<i>CDrop-Blocks</i>), <i>MaxPool2D</i> )
+            <li> List( List(<i>CDrop-Block</i>), <i>MaxPool2D</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Linear</i> )
             <li> <i>SoftMax</i>
@@ -75,15 +75,16 @@ Structure of the CNNs:
     </td>
     <td>
         <ol>
-            <li> List( List(<i>C-Blocks</i>), <i>MaxPool2D</i> )
+            <li> List( List(<i>C-Block</i>), <i>MaxPool2D</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Inception-Block</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Linear</i> )
             <li> <i>SoftMax</i>
         </ol>
+        where a <i>CDrop-Block</i> is formed by:
+        <img src=https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true" alt="ConvDrop-Block">
     </td>
  </tr>
 </table>
 
-![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true)
