@@ -5,7 +5,10 @@
 Input file: <code>fer2013.csv</code>
 Output file: <code>fer2013_augmented.csv</code>
 
-From analysis of the dataset emerges that it is small, only 35887 images, and not uniformly distributed: happiness has 8989 samples meanwhile disgust only 547.<br/>
+From analysis of the dataset emerges that it is:
+ * small: has only 35887 images
+ * not uniformly distributed: happiness has 8989 samples meanwhile disgust only 547.
+
 The analysis and the augmentation is done in the <code>fer2013_augmenter.ipynb</code> file.<br/>
 The transformation class is implemented inside the <code>fer2013_augmenter.py</code> and is invoked by the notebook.
 
