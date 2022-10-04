@@ -5,13 +5,13 @@
 Input file: <code>fer2013.csv</code>
 Output file: <code>fer2013_augmented.csv</code>
 
-From analysis of the dataset emerges that it is small, only 35887 images, and not uniformly distributed: happiness has 8989 samples meanwhile disgust only 547.\\
-The analysis and the augmentation is done in the <code>fer2013_augmenter.ipynb</code> file.\\
+From analysis of the dataset emerges that it is small, only 35887 images, and not uniformly distributed: happiness has 8989 samples meanwhile disgust only 547.<br/>
+The analysis and the augmentation is done in the <code>fer2013_augmenter.ipynb</code> file.<br/>
 The transformation class is implemented inside the <code>fer2013_augmenter.py</code> and is invoked by the notebook.
 
-We decided to enlarge the database using some transformations on the images.\\
-The size of original dataset is almost 290 MB.\\
-Each transformation increase the size of 290 MB more or less.\\
+We decided to enlarge the database using some transformations on the images.<br/>
+The size of original dataset is almost 290 MB.<br/>
+Each transformation increase the size of 290 MB more or less.<br/>
 The transformation applied are the following, defined in the class <code>Filters(Enum)</code>:
  1. <code>SOBEL</code>
  2. <code>VERTICAL</code>
@@ -38,7 +38,7 @@ The filters now are implemented in three possible ways:
  * using custom function: (image, custom_parameter) -> image
     * used for sobel filter, flipping, rotations
 
-Before applying the transformation filter-based, the image is padded to avoid images with lower dimensions.\\
+Before applying the transformation filter-based, the image is padded to avoid images with lower dimensions.<br/>
 Currently it is not supported the application of a stride.
 
 If you want to add any type of transformation you just need to:
