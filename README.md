@@ -85,3 +85,5 @@ Structure of the CNNs:
     </td>
  </tr>
 </table>
+
+![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.jpg?raw=true)
