@@ -46,8 +46,9 @@ Currently it is not supported the application of a stride.
 
 If you want to add any type of transformation you just need to:
  1. add the transformation name to Filters(Enum)
- 2. (for lambda/filter) : add a lambda/filter to the list of lambdas/filters 
- 2. (for custom functions) : add the function and edit the also the <code>generate_all_filters</code> function adding the function call
+ 2. 
+    * (for lambda/filter) : add a lambda/filter to the list of lambdas/filters 
+    * (for custom functions) : add the function and edit the also the <code>generate_all_filters</code> function adding the function call
  3. initialize and execute the class
 
 ## Emotion Recognition
