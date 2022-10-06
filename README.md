@@ -30,7 +30,7 @@ The transformation applied are the following, defined in the class <code>Filters
  12. <code>ROT_RIGHT_40_DEGREES</code>
  13. <code>ROT_RIGHT_60_DEGREES</code>
 
-The final size will be almost 14 * 290 MB = 4 GB (original images included).
+The final size will be almost 14 * 290 MB = 4 GB (original images included).<br/>
 Editing the notebook and selecting only the desidered, it is possible to create a dataset with only some of these filters.
 
 The filters now are implemented in three possible ways:
@@ -47,7 +47,7 @@ Currently it is not supported the application of a stride.
 If you want to add any type of transformation you just need to:
  1. add the transformation name to Filters(Enum)
  2. 
-    * (for lambda/filter) : add a lambda/filter to the list of lambdas/filters 
+    * (for lambda/matrix) : add a lambda/matrix to the list of lambdas/matrixes 
     * (for custom functions) : add the function and edit the also the <code>generate_all_filters</code> function adding the function call
  3. initialize and execute the class
 
