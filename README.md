@@ -67,25 +67,25 @@ Structure of the CNNs:
  <tr>
     <td>
         <ol>
-            <li> List( List(<i>CDrop-Block</i>), <i>MaxPool2D</i> )
+            <li> List( List(<i>Conv-Drop-Block</i>), <i>MaxPool2D</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Linear</i> )
             <li> <i>SoftMax</i>
         </ol>
-        where a <i>C-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" alt="Conv-Block">
+        where a <i>Conv-Drop-Block</i> is formed by:
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true" alt="Conv-Drop-Block">
     </td>
     <td>
         <ol>
-            <li> List( List(<i>C-Block</i>), <i>MaxPool2D</i> )
+            <li> List( List(<i>Conv-Basic-Block</i>), <i>MaxPool2D</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Inception-Block</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Linear</i> )
             <li> <i>SoftMax</i>
         </ol>
-        where a <i>CDrop-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true" alt="ConvDrop-Block">
+        where a <i>Conv-Basic-Block</i> is formed by:
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" alt="Conv-Basic-Block">
     </td>
  </tr>
 </table>
