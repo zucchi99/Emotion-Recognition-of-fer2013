@@ -94,7 +94,9 @@ So, for both the classes, the full view of the first point of the structure is t
 
 ![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png?raw=true "SequenceOfC-Block")
 
-Tipically we repeated the whole structure (the outer list) $3 \le m \le 5$ times, every time increasing the number of channels: $ N_0 \rightarrow N_1 \rightarrow ... \rightarrow N_m  $
+Tipically we repeated the whole structure (the outer list) $3 \le m \le 5$ times, every time increasing the number of channels.
+
+$3 * N$
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
 
