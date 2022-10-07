@@ -123,7 +123,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
  2. <i>DropOut</i>:
       * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
  3. <i>List( Linear )</i>: 
-      * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
+      * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will represent the probability to be of the i-th emotion.
          * NB: Tipically you want always to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
