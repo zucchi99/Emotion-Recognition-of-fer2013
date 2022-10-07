@@ -67,27 +67,27 @@ Structure of the CNNs:
  <tr>
     <td>
         <ol>
-            <li> List( List(<i>C-Block</i>), <i>MaxPool2D</i> )
-            <li> <i>DropOut</i>
-            <li> List( <i>Linear</i> )
-            <li> <i>SoftMax</i>
+            <li> List( List(*C-Block*), *MaxPool2D* )
+            <li> *DropOut*
+            <li> List( *Linear* )
+            <li> *SoftMax*
         </ol>
         <br/><br/>
     </td>
     <td>
         <ol>
-            <li> <i>List( List( C-Block ), MaxPool2D )</i>
-            <li> <i>DropOut</i>
-            <li> <i>List( Inception-Block )</i>
-            <li> <i>DropOut</i>
-            <li> <i>List( Linear )</i>
-            <li> <i>SoftMax</i>
+            <li> *List( List( C-Block ), MaxPool2D )*
+            <li> *DropOut*
+            <li> *List( Inception-Block )*
+            <li> *DropOut*
+            <li> *List( Linear )*
+            <li> *SoftMax*
         </ol>
     </td>
  </tr>
 </table>
 
-The C-Block (convolutional-block) is formed by a <i>Conv2D</i>, a <i>DropOut</i> (optionally), and a <i>ReLU</i>:
+The C-Block (convolutional-block) is formed by a *Conv2D*, a *DropOut* (optionally), and a *ReLU*:
 <table>
    <tr>
       <td><b style="font-size:30px">Conv-Drop-ReLU</b></td>
@@ -109,21 +109,21 @@ So, for both the classes, the full view of the first point of the structure is t
 
 ### Class DynamicNetBasic
 
-The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
+The class *DynamicNetBasic* has a linear structure and has the following parameters (divided by which step are used):
 
- 1. <i>List( List( Conv-Drop-Block ), MaxPool2D )</i>:
-   * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
-   * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
+ 1. *List( List( Conv-Drop-Block ), MaxPool2D )*:
+   * *integer* <code>conv__in_channels</code>: number of channels in input (the number of filters used).
+   * *tuple of integer* <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
       * NB: Tipically you want always to increase the number of channels in the convolutional part
-   * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
+   * *tuple of integer* <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the *MaxPool2D*. 
       * NB1: From the second Conv2D the number of $in{\textunderscore}channel$ will be obviously same as $out{\textunderscore}channels$.
       * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
- 2. <i>DropOut</i>:
-   * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
- 3. <i>List( Linear )</i>: 
-   * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
+ 2. *DropOut*:
+   * *double* <code>dropout_prob</code>: percentage of dropout probability
+ 3. *List( Linear )*: 
+   * *tuple of integer* <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
       * NB: Tipically you want always to decrease the number of channels in the linear part
- 4. <i>SoftMax</i>: no parameters
+ 4. *SoftMax*: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
 $dropout{\textunderscore}prob = 0.35$<br/>
@@ -134,9 +134,9 @@ $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356
 
 ### Class DynamicNetInceptions
 
-As a reminder, an *Inception-Block* is the following (developed by Google):
+As a reminder, the structure *Inception-Block* is the following (developed by Google):
 
 <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="300" alt="Inception-Block">
 
-The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
+The class *DynamicNetBasic* has a linear structure and has the following parameters (divided by which step are used):
 
