@@ -113,7 +113,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>:
    * <i>double</i> <code>dropout_prob_after_conv</code>: percentage of dropout probability after each *Conv2D*.
-      * NB: To use a *Conv-ReLU* without dropout pass a value <= 0.
+      * NB: To use a *Conv-ReLU* without dropout pass a value $\le 0$.
    * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
    * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
       * NB: Tipically you want always to increase the number of channels in the convolutional part
@@ -128,6 +128,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
+$dropout{\textunderscore}prob{\textunderscore}after{\textunderscore}conv = 0$<br/>
 $dropout{\textunderscore}prob = 0.35$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
