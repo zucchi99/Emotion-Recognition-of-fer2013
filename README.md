@@ -127,7 +127,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
          * NB: Tipically you want to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
-So, for example, this would be produce well performing -but huge- model:<br/>
+So, for example, this would be produce a well performing -but huge- model:<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}relu = 0$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (200, 400, 600, 800)$<br/>
@@ -145,7 +145,7 @@ The class <i>DynamicNetBasic</i> doesn't have a linear structure for two reasons
  * each inception module inside itself diverges and converges
  * each inception module has a skip connection: $x = run{\textunderscore}inception(x, inception) + nn.Identidy(x)$
 
-The class has following parameters (divided by which step are used):
+The class has the following parameters (divided by which step are used):
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>: all same as *Basic* class
  2. <i>DropOut</i>:
@@ -159,7 +159,7 @@ The class has following parameters (divided by which step are used):
  5. <i>List( Linear )</i>: all same as *Basic* class
  6. <i>SoftMax</i>: no parameters
 
-So, for example, this would be produce well performing -but huge- model:<br/>
+So, for example, this would be produce a well performing -but huge- model:<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}relu = 0$<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}incep = 0.35$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
@@ -169,3 +169,5 @@ $incep{\textunderscore}{\textunderscore}num{\textunderscore}layers = 35$<br/>
 $incep{\textunderscore}{\textunderscore}multiplier =  3$<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}linear = 0.50$<br/>
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356, 158, 64, len(emotions))$
+
+### Class Optimizer
