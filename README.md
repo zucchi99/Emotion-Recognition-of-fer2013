@@ -91,14 +91,18 @@ Structure of the CNNs:
  </tr>
 </table>
 
+<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+
 So, for both the classes, the full view of the first point of the structure is the following:
 
 <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png" height="250" alt="SequenceOfC-Block">
 
 ### Class DynamicNetBasic
 
-The class <i>DynamicNetBasic</i> has the following parameters (divided by which step are used):
- 1. <i>List( List( Conv-Block ), MaxPool2D )</i>:
+The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
+
+ 1. <i>List( List( Conv-Drop-Block ), MaxPool2D )</i>:
    * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
    * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
       * NB: Tipically you want always to increase the number of channels in the convolutional part
@@ -121,9 +125,9 @@ $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356
 
 ### Class DynamicNetInceptions
 
-
 As a reminder, an *Inception-Block* is the following (developed by Google):
 
 <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="300" alt="Inception-Block">
 
+The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
 
