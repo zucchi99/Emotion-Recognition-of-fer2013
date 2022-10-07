@@ -118,7 +118,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
       * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
          * NB: Tipically you want to increase the number of channels in the convolutional part
       * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
-         * NB the first <i>Conv2D</i> has shape $in{\textunderscore}channel \rightarrow out{\textunderscore}channels$, the others $out{\textunderscore}channels \rightarrow out{\textunderscore}channels$.
+         * NB the first <i>Conv2D</i> has shape $in{\textunderscore}chan \rightarrow out{\textunderscore}chan$, the others $out{\textunderscore}chan \rightarrow out{\textunderscore}chan$.
          * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
  2. <i>DropOut</i>:
       * <i>double</i> <code>drop__before_linear</code>: percentage of dropout probability
