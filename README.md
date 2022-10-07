@@ -54,7 +54,7 @@ If you want to add any type of transformation you just need to:
 ## Emotion Recognition
 
 The image recognition is done by a Convolutional Neural Network.
-The creation of the CNN is done by the classes <code>DynamicNetBasic</code> and <code>DynamicNetInceptions</code>.
+The creation of the CNN is done by the classes <code>DynamicNetBasic</code> and <code>DynamicNetInceptions</code>, which are subclasses of the class <code>torch.nn.Module</code>.
 Both the classes allow to create dynamic nets (with a variable number of layers).
 The class constructor allows to try many different nets by simply changing few parameters.
 
@@ -77,15 +77,15 @@ Structure of the CNNs:
     </td>
     <td>
         <ol>
-            <li> List( List(<i>Conv-Basic-Block</i>), <i>MaxPool2D</i> )
+            <li> <i>List( List( Conv-Block ), MaxPool2D )</i>
             <li> <i>DropOut</i>
-            <li> List( <i>Inception-Block</i> )
+            <li> <i>List( Inception-Block )</i>
             <li> <i>DropOut</i>
-            <li> List( <i>Linear</i> )
+            <li> <i>List( Linear )</i>
             <li> <i>SoftMax</i>
         </ol>
-        where a <i>Conv-Basic-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" alt="Conv-Basic-Block">
+        where a <i>Conv-Block</i> is formed by:
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" alt="Conv-Block">
     </td>
  </tr>
 </table>
@@ -94,9 +94,25 @@ So, for both the classes, the full view of the first point of the structure is t
 
 ![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png?raw=true "SequenceOfC-Block")
 
-### List( List(<i>C-Block</i>), <i>MaxPool2D</i> )
+### Class DynamicNetBasic
 
-Tipically we repeated the whole structure (the outer list) $3 \le m \le 5$ times, every time increasing the number of channels $N_0 \rightarrow N_1 \rightarrow ... \rightarrow N_m$. Obviously $N_0$ is the number of filters applied to the dataset, $N_0 = 1$ if only original images are used. <br/>
+The class <i>DynamicNetBasic</i> has the following parameters (divided by which step are used):
+ 1. <i>List( List( Conv-Block ), MaxPool2D )</i>:
+   * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
+   * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
+      * NB: Tipically you want always to increase the number of channels in the convolutional part
+   * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
+      * NB1: From the second Conv2D the number of $in{\textunderscore}channel$ will be obviously same as $out{\textunderscore}channels$.
+      * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
+ 2. <i>DropOut</i>:
+   * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
+ 3. <i>List( Linear )</i>: 
+   * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
+      * NB: Tipically you want always to decrease the number of channels in the linear part
+ 4. <i>SoftMax</i>: no parameters
+
+
+Tipically we repeated the outer list $3 \le m \le 5$ times, every time increasing the number of channels $N_0 \rightarrow N_1 \rightarrow ... \rightarrow N_m$. Obviously $N_0$ is the number of filters applied to the dataset, $N_0 = 1$ if only original images are used. <br/>
 
 For each step, the i-th element of the List(<i>Conv-Block</i>), three parameters are needed: 
  * $in{\textunderscore}channel=N_i$, 
