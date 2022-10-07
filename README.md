@@ -47,13 +47,13 @@ Currently it is not supported the application of a stride.
 If you want to add any type of transformation you just need to:
  1. add the transformation name to Filters(Enum)
  2. 
-    * (for lambda/matrix) : add a lambda/matrix to the list of lambdas/matrixes 
+    * (for lambda/matrix) : add the lambda/matrix to the list of lambdas/matrixes 
     * (for custom functions) : add the function and edit the also the <code>generate_all_filters</code> function adding the function call
  3. initialize and execute the class
 
 ## Emotion Recognition
 
-The image recognition is done by a Convolutional Neural Network.
+The image recognition is done by a Convolutional Neural Network, using <code>PyTorch</code>.
 The creation of the CNN is done by the classes <code>DynamicNetBasic</code> and <code>DynamicNetInceptions</code>, which are subclasses of the class <code>torch.nn.Module</code>.
 Both the classes allow to create dynamic nets (with a variable number of layers).
 The class constructor allows to try many different nets by simply changing few parameters.
