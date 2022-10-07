@@ -153,7 +153,7 @@ The class has following parameters (divided by which step are used):
  3. <i>List( Inception-Block )</i>:
    * <i>integer</i> <code>incep__num_layers</code>: number of inception modules
       * NB the first has shape $N \rightarrow 256 * mul$ , the others $256 * mul \rightarrow 256 * mul$
-   * <i>integer</i> <code>incep__multiplier</code> =  3 #multiplier of the default out dim of resnet: (64 for 1x1, 128 per 3x3, 32 per 5x5, 32 per maxpool)
+   * <i>integer</i> <code>incep__multiplier</code>: multiplier applied to the default out dimension of resnet: (64 for 1x1, 128 per 3x3, 32 per 5x5, 32 per maxpool), for ex. if $=2$ will be $2 * 64$ for 1x1, $2 * 128$ for 3x3 ecc.
  4. <i>DropOut</i>:
    * <i>double</i> <code>aft_incep_dropout_prob</code>: percentage of dropout probability used after the inceptions
  3. <i>List( Linear )</i>: 
