@@ -59,7 +59,7 @@ Both the classes allow to create dynamic nets (with a variable number of layers)
 The class constructor allows to try many different nets by simply changing few parameters.
 
 Structure of the CNNs:
-<table border="0">
+<table>
  <tr>
     <td><b style="font-size:30px">DynamicNetBasic</b></td>
     <td><b style="font-size:30px">DynamicNetInceptions</b></td>
@@ -90,14 +90,17 @@ Structure of the CNNs:
     </td>
  </tr>
 </table>
-<div class="row">
-   <div class="column">
-      <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
-   </div>
-   <div class="column">
-      <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
-   </div>
-</div>
+
+<table>
+   <tr>
+      <td>
+         <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+      </td>
+      <td>
+         <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+      </td>
+   </tr>
+</table>
 
 So, for both the classes, the full view of the first point of the structure is the following:
 
