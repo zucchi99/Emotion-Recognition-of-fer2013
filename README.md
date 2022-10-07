@@ -129,12 +129,10 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
 
 So, for example, this would be produce well performing -but huge- model:<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}relu = 0$<br/>
-$drop{\textunderscore}{\textunderscore}before{\textunderscore}linear = 0.35$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (200, 400, 600, 800)$<br/>
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (   2,  2,   2,   1)$<br/>
-$incep{\textunderscore}{\textunderscore}num{\textunderscore}layers = 35$
-$incep{\textunderscore}{\textunderscore}multiplier = 3$
+$drop{\textunderscore}{\textunderscore}before{\textunderscore}linear = 0.35$<br/>
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (432, 108, 27, len(emotions))$
 
 ### Class DynamicNetInceptions
@@ -164,10 +162,10 @@ The class has following parameters (divided by which step are used):
 So, for example, this would be produce well performing -but huge- model:<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}relu = 0$<br/>
 $drop{\textunderscore}{\textunderscore}before{\textunderscore}incep = 0.35$<br/>
-$drop{\textunderscore}{\textunderscore}before{\textunderscore}linear = 0.50$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
-$incep{\textunderscore}{\textunderscore}num{\textunderscore}layers = 35$<br/>
-$incep{\textunderscore}{\textunderscore}multiplier =  3$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (  4,   3,    2,    1)$<br/>
+$incep{\textunderscore}{\textunderscore}num{\textunderscore}layers = 35$<br/>
+$incep{\textunderscore}{\textunderscore}multiplier =  3$<br/>
+$drop{\textunderscore}{\textunderscore}before{\textunderscore}linear = 0.50$<br/>
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356, 158, 64, len(emotions))$
