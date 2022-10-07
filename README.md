@@ -73,7 +73,7 @@ Structure of the CNNs:
             <li> <i>SoftMax</i>
         </ol>
         where a <i>Conv-Drop-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true" alt="Conv-Drop-Block">
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true" height="250" alt="Conv-Drop-Block">
     </td>
     <td>
         <ol>
@@ -85,7 +85,7 @@ Structure of the CNNs:
             <li> <i>SoftMax</i>
         </ol>
         where a <i>Conv-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" alt="Conv-Block">
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" height="250" alt="Conv-Block">
     </td>
  </tr>
 </table>
@@ -120,6 +120,6 @@ $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension=(432, 108, 2
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
 
-<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="300">
+<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="300" alt="Inception-Block">
 
 
