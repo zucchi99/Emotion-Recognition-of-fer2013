@@ -118,7 +118,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
    * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
       * NB: Tipically you want always to increase the number of channels in the convolutional part
    * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
-      * NB1: From the second Conv2D the number of $in{\textunderscore}channel$ will be obviously same as $out{\textunderscore}channels$.
+      * NB the first <i>Conv2D</i> has shape $in{\textunderscore}channel \rightarrow out{\textunderscore}channels$, the others $out{\textunderscore}channels \rightarrow out{\textunderscore}channels$.
       * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
  2. <i>DropOut</i>:
    * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
@@ -147,15 +147,15 @@ The class <i>DynamicNetBasic</i> doesn't have a linear structure for two reasons
 
 The class has following parameters (divided by which step are used):
 
- 1. <i>List( List( Conv-Drop-Block ), MaxPool2D )</i>:
-   * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
-   * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
-      * NB: Tipically you want always to increase the number of channels in the convolutional part
-   * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
-      * NB1: From the second Conv2D the number of $in{\textunderscore}channel$ will be obviously same as $out{\textunderscore}channels$.
-      * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
+ 1. <i>List( List( C-Block ), MaxPool2D )</i>: all same as *Basic* class
  2. <i>DropOut</i>:
-   * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
+   * <i>double</i> <code>bef_incep_dropout_prob</code>: percentage of dropout probability used before the inceptions
+ 3. <i>List( Inception-Block )</i>:
+   * <i>integer</i> <code>incep__num_layers</code>: number of inception modules
+      * NB the first has shape $N \rightarrow 256*mul$, the others $256*mul \rightarrow 256*mul$
+   * <i>integer</i> <code>incep__multiplier</code> =  3 #multiplier of the default out dim of resnet: (64 for 1x1, 128 per 3x3, 32 per 5x5, 32 per maxpool)
+ 4. <i>DropOut</i>:
+   * <i>double</i> <code>aft_incep_dropout_prob</code>: percentage of dropout probability used after the inceptions
  3. <i>List( Linear )</i>: 
    * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
       * NB: Tipically you want always to decrease the number of channels in the linear part
