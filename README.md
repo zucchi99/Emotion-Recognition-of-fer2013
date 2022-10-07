@@ -90,12 +90,14 @@ Structure of the CNNs:
 The C-Block (convolutional-block) is formed by a <i>Conv2D</i>, a <i>DropOut</i> (optionally), and a <i>ReLU</i>:
 <table>
    <tr>
+      <td><b style="font-size:30px">Conv-Drop-ReLU</b></td>
+      <td><b style="font-size:30px">Conv-ReLU</b></td>
+   </tr>
+   <tr>
       <td>
-         With Dropout:
          <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png" height="200" alt="Conv-Drop-Block">
       </td>
       <td>
-         Without Dropout:
          <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
       </td>
    </tr>
