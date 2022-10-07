@@ -74,7 +74,7 @@ Structure of the CNNs:
         </ol>
         <br/><br/>
         where a <i>Conv-Drop-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png?raw=true" height="200" alt="Conv-Drop-Block">
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png" height="200" alt="Conv-Drop-Block">
     </td>
     <td>
         <ol>
@@ -86,14 +86,14 @@ Structure of the CNNs:
             <li> <i>SoftMax</i>
         </ol>
         where a <i>Conv-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png?raw=true" height="200" alt="Conv-Block">
+        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
     </td>
  </tr>
 </table>
 
 So, for both the classes, the full view of the first point of the structure is the following:
 
-<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png" height="200" alt="SequenceOfC-Block">
+<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png" height="250" alt="SequenceOfC-Block">
 
 ### Class DynamicNetBasic
 
