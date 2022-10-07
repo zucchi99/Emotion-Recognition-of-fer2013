@@ -133,6 +133,8 @@ $drop{\textunderscore}{\textunderscore}before{\textunderscore}linear = 0.35$<br/
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (200, 400, 600, 800)$<br/>
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (   2,  2,   2,   1)$<br/>
+$incep{\textunderscore}{\textunderscore}num{\textunderscore}layers = 35$
+$incep{\textunderscore}{\textunderscore}multiplier = 3$
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (432, 108, 27, len(emotions))$
 
 ### Class DynamicNetInceptions
