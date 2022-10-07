@@ -137,7 +137,7 @@ $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356
 
 ### Class DynamicNetInceptions
 
-As a reminder, the structure *Inception-Block* is the following (developed by Google):
+As a reminder, the structure of an *Inception-Block* is the following (developed by Google):
 
 <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="300" alt="Inception-Block">
 
@@ -149,7 +149,7 @@ The class has following parameters (divided by which step are used):
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>: all same as *Basic* class
  2. <i>DropOut</i>:
-   * <i>double</i> <code>bef_incep_dropout_prob</code>: percentage of dropout probability used before the inceptions
+      * <i>double</i> <code>bef_incep_dropout_prob</code>: percentage of dropout probability used before the inceptions
  3. <i>List( Inception-Block )</i>:
    * <i>integer</i> <code>incep__num_layers</code>: number of inception modules to execute
       * NB the first has shape $N \rightarrow 256 * mul$, the others $256 * mul \rightarrow 256 * mul$
