@@ -111,7 +111,9 @@ So, for both the classes, the full view of the first point of the structure is t
 
 The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
 
- 1. <i>List( List( Conv-Drop-Block ), MaxPool2D )</i>:
+ 1. <i>List( List( C-Block ), MaxPool2D )</i>:
+   * <i>double</i> <code>dropout_prob_after_conv</code>: percentage of dropout probability after each *Conv2D*.
+      * NB: To use a *Conv-ReLU* without dropout pass a value <= 0.
    * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
    * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
       * NB: Tipically you want always to increase the number of channels in the convolutional part
@@ -140,7 +142,20 @@ As a reminder, the structure *Inception-Block* is the following (developed by Go
 
 The class <i>DynamicNetBasic</i> doesn't have a linear structure for two reasons: 
  * each inception module inside itself diverges and converges
- * each inception module has a skip connection: $x = run_inception(x, inception) + nn.Identidy(x)$
+ * each inception module has a skip connection: $x = run{\textunderscore}inception(x, inception) + nn.Identidy(x)$
 
 The class has following parameters (divided by which step are used):
 
+ 1. <i>List( List( Conv-Drop-Block ), MaxPool2D )</i>:
+   * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
+   * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
+      * NB: Tipically you want always to increase the number of channels in the convolutional part
+   * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
+      * NB1: From the second Conv2D the number of $in{\textunderscore}channel$ will be obviously same as $out{\textunderscore}channels$.
+      * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
+ 2. <i>DropOut</i>:
+   * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
+ 3. <i>List( Linear )</i>: 
+   * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
+      * NB: Tipically you want always to decrease the number of channels in the linear part
+ 4. <i>SoftMax</i>: no parameters
