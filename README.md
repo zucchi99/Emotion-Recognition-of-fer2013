@@ -90,9 +90,14 @@ Structure of the CNNs:
     </td>
  </tr>
 </table>
-
-<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
-<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+<div class="row">
+   <div class="column">
+      <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+   </div>
+   <div class="column">
+      <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+   </div>
+</div>
 
 So, for both the classes, the full view of the first point of the structure is the following:
 
