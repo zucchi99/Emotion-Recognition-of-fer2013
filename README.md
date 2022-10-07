@@ -116,15 +116,15 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
          * NB: To use a *Conv-ReLU* without dropout pass a value $\le 0$.
       * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
       * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
-         * NB: Tipically you want always to increase the number of channels in the convolutional part
+         * NB: Tipically you want to increase the number of channels in the convolutional part
       * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
          * NB the first <i>Conv2D</i> has shape $in{\textunderscore}channel \rightarrow out{\textunderscore}channels$, the others $out{\textunderscore}channels \rightarrow out{\textunderscore}channels$.
          * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
  2. <i>DropOut</i>:
       * <i>double</i> <code>drop__before_linear</code>: percentage of dropout probability
  3. <i>List( Linear )</i>: 
-      * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will represent the probability to be of the i-th emotion.
-         * NB: Tipically you want always to decrease the number of channels in the linear part
+      * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have value $7 = len(emotions)$, so that each value of the final array will represent the probability to be the i-th emotion.
+         * NB: Tipically you want to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
