@@ -111,20 +111,12 @@ The class <i>DynamicNetBasic</i> has the following parameters (divided by which 
       * NB: Tipically you want always to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
-So, for example, this would be produce well performing -but huge- model:
-$$dropout{\textunderscore}prob = 0.62$$
-$conv{\textunderscore}{\textunderscore}in{\textunderscore}channels=len(filters{\textunderscore}used)$
-$conv{\textunderscore}{\textunderscore}out{\textunderscore}channels=     (200,400,600,800)$
-$conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions=(  2,  2,  2,  1)$
+So, for example, this would be produce well performing -but huge- model:<br/>
+$dropout{\textunderscore}prob = 0.62$<br/>
+$conv{\textunderscore}{\textunderscore}in{\textunderscore}channels=len(filters{\textunderscore}used)$<br/>
+$conv{\textunderscore}{\textunderscore}out{\textunderscore}channels=     (200,400,600,800)$<br/>
+$conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions=(  2,  2,  2,  1)$<br/>
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension=(432, 108, 27, len(emotions))$
-
-Tipically we repeated the outer list $3 \le m \le 5$ times, every time increasing the number of channels $N_0 \rightarrow N_1 \rightarrow ... \rightarrow N_m$. Obviously $N_0$ is the number of filters applied to the dataset, $N_0 = 1$ if only original images are used. <br/>
-
-For each step, the i-th element of the List(<i>Conv-Block</i>), three parameters are needed: 
- * $in{\textunderscore}channel=N_i$, 
- * $out{\textunderscore}channel=N_{i+1}$, 
- * $layer{\textunderscore}repetition$.
-
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
 
