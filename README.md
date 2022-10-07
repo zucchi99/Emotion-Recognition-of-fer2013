@@ -111,12 +111,12 @@ The class <i>DynamicNetBasic</i> has the following parameters (divided by which 
       * NB: Tipically you want always to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
-So, for example, this would be produce well performing -but huge- model:
+So, for example, this would be produce well performing -but huge- model:<br/>
 <code>dropout_prob = 0.62</code>
-$conv__in_channels=len(filters_used)$
-$conv__out_channels=     (200,400,600,800)$
-$conv__layer_repetitions=(  2,  2,  2,  1)$
-$lin__out_dimension=(432, 108, 27, len(emotions))$
+<code>conv__in_channels = len(filters_used)</code>
+<code>conv__out_channels =      (200,400,600,800)</code>
+<code>conv__layer_repetitions = (  2,  2,  2,  1)</code>
+<code>lin__out_dimension = (432, 108, 27, len(emotions))</code>
 
 Tipically we repeated the outer list $3 \le m \le 5$ times, every time increasing the number of channels $N_0 \rightarrow N_1 \rightarrow ... \rightarrow N_m$. Obviously $N_0$ is the number of filters applied to the dataset, $N_0 = 1$ if only original images are used. <br/>
 
