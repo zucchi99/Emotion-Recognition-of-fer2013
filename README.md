@@ -112,7 +112,7 @@ So, for both the classes, the full view of the first point of the structure is t
 The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>:
-      * <i>double</i> <code>dropout_prob__after_conv</code>: percentage of dropout probability after each *Conv2D*.
+      * <i>double</i> <code>drop__after_conv</code>: percentage of dropout probability after each *Conv2D*.
          * NB: To use a *Conv-ReLU* without dropout pass a value $\le 0$.
       * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
       * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
@@ -121,15 +121,15 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
          * NB the first <i>Conv2D</i> has shape $in{\textunderscore}channel \rightarrow out{\textunderscore}channels$, the others $out{\textunderscore}channels \rightarrow out{\textunderscore}channels$.
          * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
  2. <i>DropOut</i>:
-      * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
+      * <i>double</i> <code>drop</code>: percentage of dropout probability
  3. <i>List( Linear )</i>: 
       * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will represent the probability to be of the i-th emotion.
          * NB: Tipically you want always to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
-$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}after{\textunderscore}conv = 0$<br/>
-$dropout{\textunderscore}prob = 0.35$<br/>
+$drop{\textunderscore}{\textunderscore}after{\textunderscore}conv = 0$<br/>
+$drop = 0.35$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (  4,   3,    2,    1)$<br/>
@@ -160,9 +160,9 @@ The class has following parameters (divided by which step are used):
  6. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
-$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}after{\textunderscore}conv = 0$<br/>
-$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}before{\textunderscore}incep = 0.35$<br/>
-$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}after{\textunderscore}incep = 0.50$<br/>
+$drop{\textunderscore}{\textunderscore}after{\textunderscore}conv = 0$<br/>
+$drop{\textunderscore}{\textunderscore}before{\textunderscore}incep = 0.35$<br/>
+$drop{\textunderscore}{\textunderscore}after{\textunderscore}incep = 0.50$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (  4,   3,    2,    1)$<br/>
