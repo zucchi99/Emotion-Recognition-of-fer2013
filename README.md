@@ -94,6 +94,8 @@ So, for both the classes, the full view of the first point of the structure is t
 
 ![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png?raw=true "SequenceOfC-Block")
 
+### List( List(<i>C-Block</i>), <i>MaxPool2D</i> )
+
 Tipically we repeated the whole structure (the outer list) $3 \le m \le 5$ times, every time increasing the number of channels $N_0 \rightarrow N_1 \rightarrow ... \rightarrow N_m$. Obviously $N_0$ is the number of filters applied to the dataset, $N_0 = 1$ if only original images are used. <br/>
 
 For each step, the i-th element of the List(<i>Conv-Block</i>), three parameters are needed: 
