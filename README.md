@@ -120,6 +120,6 @@ $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension=(432, 108, 2
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
 
-<a href="url"><img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="200"></a>
+<a href="url"><img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="400"></a>
 
 
