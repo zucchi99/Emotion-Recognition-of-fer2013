@@ -112,7 +112,7 @@ The class <i>DynamicNetBasic</i> has the following parameters (divided by which 
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:
-$dropout{\textunderscore}prob = 0.62$
+$$dropout{\textunderscore}prob = 0.62$$
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels=len(filters{\textunderscore}used)$
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels=     (200,400,600,800)$
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions=(  2,  2,  2,  1)$
