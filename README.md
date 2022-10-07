@@ -112,7 +112,7 @@ So, for both the classes, the full view of the first point of the structure is t
 The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>:
-      * <i>double</i> <code>dropout_prob_after_conv</code>: percentage of dropout probability after each *Conv2D*.
+      * <i>double</i> <code>dropout_prob__after_conv</code>: percentage of dropout probability after each *Conv2D*.
          * NB: To use a *Conv-ReLU* without dropout pass a value $\le 0$.
       * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
       * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
@@ -128,7 +128,7 @@ The class <i>DynamicNetBasic</i> has a linear structure and has the following pa
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
-$dropout{\textunderscore}prob{\textunderscore}after{\textunderscore}conv = 0$<br/>
+$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}after{\textunderscore}conv = 0$<br/>
 $dropout{\textunderscore}prob = 0.35$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
@@ -149,12 +149,21 @@ The class has following parameters (divided by which step are used):
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>: all same as *Basic* class
  2. <i>DropOut</i>:
-      * <i>double</i> <code>bef_incep_dropout_prob</code>: percentage of dropout probability used before the inceptions
+      * <i>double</i> <code>dropout_prob__before_incep</code>: percentage of dropout probability used before the inceptions
  3. <i>List( Inception-Block )</i>:
       * <i>integer</i> <code>incep__num_layers</code>: number of inception modules to execute
          * NB the first has shape $N \rightarrow 256 * mul$, the others $256 * mul \rightarrow 256 * mul$
       * <i>integer</i> <code>incep__multiplier</code>: multiplier applied to the default out dimension of resnet ( $64$ for 1x1, $128$ for 3x3, $32$ for 5x5, $32$ for maxpool), for ex. if setted to $2$ will have $2 * 64$ for 1x1, $2 * 128$ for 3x3 ecc.
  4. <i>DropOut</i>:
-      * <i>double</i> <code>aft_incep_dropout_prob</code>: percentage of dropout probability used after the inceptions
+      * <i>double</i> <code>dropout_prob__after_incep</code>: percentage of dropout probability used after the inceptions
  5. <i>List( Linear )</i>: all same as *Basic* class
  6. <i>SoftMax</i>: no parameters
+
+So, for example, this would be produce well performing -but huge- model:<br/>
+$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}after{\textunderscore}conv = 0$<br/>
+$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}before{\textunderscore}incep = 0.35$<br/>
+$dropout{\textunderscore}prob{\textunderscore}{\textunderscore}after{\textunderscore}incep = 0.50$<br/>
+$conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
+$conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
+$conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (  4,   3,    2,    1)$<br/>
+$lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356, 158, 64, len(emotions))$
