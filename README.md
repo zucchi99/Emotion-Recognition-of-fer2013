@@ -112,19 +112,19 @@ So, for both the classes, the full view of the first point of the structure is t
 The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
 
  1. <i>List( List( C-Block ), MaxPool2D )</i>:
-   * <i>double</i> <code>dropout_prob_after_conv</code>: percentage of dropout probability after each *Conv2D*.
-      * NB: To use a *Conv-ReLU* without dropout pass a value $\le 0$.
-   * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
-   * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
-      * NB: Tipically you want always to increase the number of channels in the convolutional part
-   * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
-      * NB the first <i>Conv2D</i> has shape $in{\textunderscore}channel \rightarrow out{\textunderscore}channels$, the others $out{\textunderscore}channels \rightarrow out{\textunderscore}channels$.
-      * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
+      * <i>double</i> <code>dropout_prob_after_conv</code>: percentage of dropout probability after each *Conv2D*.
+         * NB: To use a *Conv-ReLU* without dropout pass a value $\le 0$.
+      * <i>integer</i> <code>conv__in_channels</code>: number of channels in input (the number of filters used).
+      * <i>tuple of integer</i> <code>conv__out_channels</code>: each element represents the number of channels in output for all che Conv2d inside the inner list. 
+         * NB: Tipically you want always to increase the number of channels in the convolutional part
+      * <i>tuple of integer</i> <code>conv__layer_repetitions</code>: each element represents the number of times each inner list must be repeated before the <i>MaxPool2D</i>. 
+         * NB the first <i>Conv2D</i> has shape $in{\textunderscore}channel \rightarrow out{\textunderscore}channels$, the others $out{\textunderscore}channels \rightarrow out{\textunderscore}channels$.
+         * NB2: since the class is dynamic the two tuples can have any length, but must be same for both.
  2. <i>DropOut</i>:
-   * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
+      * <i>double</i> <code>dropout_prob</code>: percentage of dropout probability
  3. <i>List( Linear )</i>: 
-   * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
-      * NB: Tipically you want always to decrease the number of channels in the linear part
+      * <i>tuple of integer</i> <code>lin__out_dimension</code>: each element represents the number of features in output. The last element must have same value $7 = len(emotions)$, so that each value of the final array will be the probability of the i-th emotion.
+         * NB: Tipically you want always to decrease the number of channels in the linear part
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
@@ -151,10 +151,10 @@ The class has following parameters (divided by which step are used):
  2. <i>DropOut</i>:
       * <i>double</i> <code>bef_incep_dropout_prob</code>: percentage of dropout probability used before the inceptions
  3. <i>List( Inception-Block )</i>:
-   * <i>integer</i> <code>incep__num_layers</code>: number of inception modules to execute
-      * NB the first has shape $N \rightarrow 256 * mul$, the others $256 * mul \rightarrow 256 * mul$
-   * <i>integer</i> <code>incep__multiplier</code>: multiplier applied to the default out dimension of resnet ( $64$ for 1x1, $128$ for 3x3, $32$ for 5x5, $32$ for maxpool), for ex. if setted to $2$ will have $2 * 64$ for 1x1, $2 * 128$ for 3x3 ecc.
+      * <i>integer</i> <code>incep__num_layers</code>: number of inception modules to execute
+         * NB the first has shape $N \rightarrow 256 * mul$, the others $256 * mul \rightarrow 256 * mul$
+      * <i>integer</i> <code>incep__multiplier</code>: multiplier applied to the default out dimension of resnet ( $64$ for 1x1, $128$ for 3x3, $32$ for 5x5, $32$ for maxpool), for ex. if setted to $2$ will have $2 * 64$ for 1x1, $2 * 128$ for 3x3 ecc.
  4. <i>DropOut</i>:
-   * <i>double</i> <code>aft_incep_dropout_prob</code>: percentage of dropout probability used after the inceptions
+      * <i>double</i> <code>aft_incep_dropout_prob</code>: percentage of dropout probability used after the inceptions
  5. <i>List( Linear )</i>: all same as *Basic* class
  6. <i>SoftMax</i>: no parameters
