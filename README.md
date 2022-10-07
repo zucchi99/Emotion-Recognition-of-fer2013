@@ -93,7 +93,7 @@ Structure of the CNNs:
 
 So, for both the classes, the full view of the first point of the structure is the following:
 
-![alt text](https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png?raw=true "SequenceOfC-Block")
+<img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/SequenceOfC-Block.png" height="200" alt="SequenceOfC-Block">
 
 ### Class DynamicNetBasic
 
