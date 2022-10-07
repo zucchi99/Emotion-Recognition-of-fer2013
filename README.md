@@ -67,36 +67,35 @@ Structure of the CNNs:
  <tr>
     <td>
         <ol>
-            <li> List( List(<i>Conv-Drop-Block</i>), <i>MaxPool2D</i> )
+            <li> List( List(<i>C-Block</i>), <i>MaxPool2D</i> )
             <li> <i>DropOut</i>
             <li> List( <i>Linear</i> )
             <li> <i>SoftMax</i>
         </ol>
         <br/><br/>
-        where a <i>Conv-Drop-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png" height="200" alt="Conv-Drop-Block">
     </td>
     <td>
         <ol>
-            <li> <i>List( List( Conv-Block ), MaxPool2D )</i>
+            <li> <i>List( List( C-Block ), MaxPool2D )</i>
             <li> <i>DropOut</i>
             <li> <i>List( Inception-Block )</i>
             <li> <i>DropOut</i>
             <li> <i>List( Linear )</i>
             <li> <i>SoftMax</i>
         </ol>
-        where a <i>Conv-Block</i> is formed by:
-        <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
     </td>
  </tr>
 </table>
 
+The C-Block (convolutional-block) is formed by a <i>Conv2D</i>, a <i>DropOut</i> (optionally), and a <i>ReLU</i>:
 <table>
    <tr>
       <td>
-         <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
+         With Dropout:
+         <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/ConvDrop-Block.png" height="200" alt="Conv-Drop-Block">
       </td>
       <td>
+         Without Dropout:
          <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Conv-Block.png" height="200" alt="Conv-Block">
       </td>
    </tr>
