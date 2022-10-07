@@ -98,8 +98,8 @@ Tipically we repeated the whole structure (the outer list) $3 \le m \le 5$ times
 
 For each step, the i-th element of the List(<i>Conv-Block</i>), three parameters are needed: 
  * $in{\textunderscore}channel=N_i$, 
- * $outchannel=N_{i+1}$, 
- * $layerrepetition$.
+ * $out{\textunderscore}channel=N_{i+1}$, 
+ * $layer{\textunderscore}repetition$.
 
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
