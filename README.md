@@ -31,7 +31,7 @@ The transformation applied are the following, defined in the class <code>Filters
  13. <code>ROT_RIGHT_60_DEGREES</code>
 
 The final size will be almost 14 * 290 MB = 4 GB (original images included).<br/>
-Editing the notebook and selecting only the desidered, it is possible to create a dataset with only some of these filters.
+If the size is too much large, it is very easy to create a smaller dataset, by editing the notebook and selecting only the some of the filters.
 
 The filters now are implemented in three possible ways:
  * using a **lambda function**: (x, y, pixel) -> pixel
@@ -113,11 +113,14 @@ The class <i>DynamicNetBasic</i> has the following parameters (divided by which 
  4. <i>SoftMax</i>: no parameters
 
 So, for example, this would be produce well performing -but huge- model:<br/>
-$dropout{\textunderscore}prob = 0.62$<br/>
+$dropout{\textunderscore}prob = 0.35$<br/>
 $conv{\textunderscore}{\textunderscore}in{\textunderscore}channels = len(filters{\textunderscore}used)$<br/>
 $conv{\textunderscore}{\textunderscore}out{\textunderscore}channels =      (288, 566, 1122, 2244)$<br/>
 $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions = (  4,   3,    2,    1)$<br/>
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension = (1024, 356, 158, 64, len(emotions))$
+
+### Class DynamicNetInceptions
+
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
 
