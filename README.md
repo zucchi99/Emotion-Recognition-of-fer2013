@@ -119,6 +119,7 @@ $conv{\textunderscore}{\textunderscore}layer{\textunderscore}repetitions=(  2,  
 $lin{\textunderscore}{\textunderscore}out{\textunderscore}dimension=(432, 108, 27, len(emotions))$
 
 As a reminder, an *Inception-Block* is the following (developed by Google):
-<a href="url"><img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" align="left" height="48" width="48" ></a>
+
+<a href="url"><img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" align="left" height="150" width="150" ></a>
 
 
