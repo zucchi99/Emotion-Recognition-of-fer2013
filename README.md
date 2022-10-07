@@ -138,5 +138,9 @@ As a reminder, the structure *Inception-Block* is the following (developed by Go
 
 <img src="https://github.com/zucchi99/Emotion-Recognition-of-fer2013/blob/master/Images/Inception-Block.png" height="300" alt="Inception-Block">
 
-The class <i>DynamicNetBasic</i> has a linear structure and has the following parameters (divided by which step are used):
+The class <i>DynamicNetBasic</i> doesn't have a linear structure for two reasons: 
+ * each inception module inside itself diverges and converges
+ * each inception module has a skip connection: $x = run_inception(x, inception) + nn.Identidy(x)$
+
+The class has following parameters (divided by which step are used):
 
