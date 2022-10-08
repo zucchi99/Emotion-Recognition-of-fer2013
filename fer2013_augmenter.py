@@ -5,6 +5,10 @@ from enum import Enum
 from tqdm.auto import tqdm
 import imutils
 
+##############################################################################
+# Enum Class Filters
+# Contains the list of all implemented filters
+##############################################################################
 class Filters(Enum) :
   ORIGINAL             = 0
   SOBEL                = 1
@@ -21,6 +25,12 @@ class Filters(Enum) :
   ROT_RIGHT_40_DEGREES = 12
   ROT_RIGHT_60_DEGREES = 13
 
+
+##############################################################################
+# Class Fer2013_Augmenter
+# Input:  a dataframe of images like fer2013
+# Output: a dataframe of images with the filters given applied
+##############################################################################
 class Fer2013_Augmenter :
 
   # pandas data df
